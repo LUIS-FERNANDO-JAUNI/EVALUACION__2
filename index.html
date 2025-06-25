@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sueldo</title>
+</head>
+<body>
+  <h3>Calculadora de Sueldo</h3>
+
+  <input type="number" id="horas" placeholder="Horas trabajadas"><br>
+  <input type="number" id="extras" placeholder="Horas extra"><br>
+  <input type="number" id="faltas" placeholder="Faltas"><br>
+  <button onclick="calcular()">Calcular</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      const h = parseInt(document.getElementById('horas').value) || 0;
+      const e = parseInt(document.getElementById('extras').value) || 0;
+      const f = parseInt(document.getElementById('faltas').value) || 0;
+      const sueldo = (h * 30) + (e * 31) - (f * 30);
+      document.getElementById('resultado').innerText = `Sueldo: ${sueldo} soles`;
+    }
+  </script>
+</body>
+</html>
